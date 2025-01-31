@@ -1,5 +1,7 @@
 import { QueryClient } from "@tanstack/react-query";
-import { hc } from "hono/client";
+import { hcWithType } from "@fomo/backend/hc";
 
-export const fomoClient = hc<AppType>(window.location.origin + "/api");
+
+export const fomoClient = hcWithType(window.location.origin + "/api");
 export const queryClient = new QueryClient();
+
